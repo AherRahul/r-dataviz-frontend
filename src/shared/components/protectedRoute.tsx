@@ -35,7 +35,7 @@ function Navigate({ to, type }: NavigateProps): null {
 const ProtectedRoute: FC<IProtectRouteProps> = ({ children }): ReactElement => {
   const dispatch = useAppDispatch();
   const { loading, error, data } = useQuery(CHECK_CURRENT_USER, {
-    fetchPolicy: 'no-cache'
+    fetchPolicy: 'no-cache',
   });
 
   console.log(loading, error, data);

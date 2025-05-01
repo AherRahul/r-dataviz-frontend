@@ -16,7 +16,7 @@ const cache: InMemoryCache = new InMemoryCache({
 
 const apolloClient: ApolloClient<NormalizedCacheObject> = new ApolloClient({
   link: httpLink,
-  cache,
+  cache: new InMemoryCache(),
   connectToDevTools: true
 });
 
