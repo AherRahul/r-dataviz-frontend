@@ -1,4 +1,3 @@
-
 import { useMutation, useQuery } from '@apollo/client';
 import { FC, ReactElement, ReactNode, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -6,8 +5,8 @@ import { useAppDispatch } from '../../store';
 import { CHECK_CURRENT_USER, LOGOUT_USER } from '../../features/auth/graphql/auth';
 import { deleteLocalStorageItem, getLocalStorageItem, setLocalStorageItem } from '../utils/utils';
 import { addAuthUser } from '../../features/auth/reducers/auth.reducer';
-import React from 'react';
 import { addDataSource } from '../../features/datasources/reducers/datasource.reducer';
+import React from 'react';
 
 interface IProtectRouteProps {
   children: ReactNode;
@@ -38,6 +37,8 @@ const ProtectedRoute: FC<IProtectRouteProps> = ({ children }): ReactElement => {
   const { loading, error, data } = useQuery(CHECK_CURRENT_USER, {
     fetchPolicy: 'no-cache'
   });
+
+  console.log(loading, error, data);
 
   useEffect(() => {
     if (data) {

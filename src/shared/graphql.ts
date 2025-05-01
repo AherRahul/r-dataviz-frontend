@@ -4,7 +4,10 @@ const httpUrl: string = import.meta.env.VITE_BASE_ENDPOINT;
 
 const httpLink: ApolloLink = createHttpLink({
   uri: httpUrl,
-  credentials: 'include'
+  credentials: 'include',
+  headers: {
+    'Content-Type': 'application/json',
+  },
 });
 
 const cache: InMemoryCache = new InMemoryCache({

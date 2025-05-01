@@ -19,7 +19,7 @@ const LoginModal: FC<{ onClose: () => void; onOpenModal: (type: string) => void 
   onClose,
   onOpenModal
 }): ReactElement => {
-  const [userInfo, setUserInfo] = useState<IAuthPayload>({ email: '', password: '' });
+  const [userInfo, setUserInfo] = useState<IAuthPayload>({ email: 'rahul@test.com', password: 'Rahul@123' });
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const toastService: ToastService = new ToastService();
